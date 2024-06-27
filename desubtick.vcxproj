@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{CB03FD75-661D-485F-AB17-AA1E6A656DC1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <PublicIncludeDirectories>$(MMSOURCE112)/core/sourcehook;hl2sdk-cs2/public/tier0;</PublicIncludeDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>protobuf/generated;hl2sdk-cs2\game\shared;hl2sdk-cs2\game\server;hl2sdk-cs2\public;hl2sdk-cs2\public\tier0;hl2sdk-cs2\public\tier1;hl2sdk-cs2\public\mathlib;$(MMSOURCE112)/core;$(MMSOURCE112)/core/sourcehook;hl2sdk-cs2/thirdparty/protobuf-3.21.8/src;$(SolutionDir);</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="protobuf\generated\base_gcmessages_csgo.pb.cc" />
+    <ClCompile Include="protobuf\generated\clientmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\connectionless_netmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\cstrike15_gcmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\cstrike15_usermessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\cs_gameevents.pb.cc" />
+    <ClCompile Include="protobuf\generated\cs_usercmd.pb.cc" />
+    <ClCompile Include="protobuf\generated\c_peer2peer_netmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\demo.pb.cc" />
+    <ClCompile Include="protobuf\generated\econ_gcmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\engine_gcmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\fatdemo.pb.cc" />
+    <ClCompile Include="protobuf\generated\gameevents.pb.cc" />
+    <ClCompile Include="protobuf\generated\gcsdk_gcmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\gcsystemmsgs.pb.cc" />
+    <ClCompile Include="protobuf\generated\netmessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\networkbasetypes.pb.cc" />
+    <ClCompile Include="protobuf\generated\networksystem_protomessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\network_connection.pb.cc" />
+    <ClCompile Include="protobuf\generated\steamdatagram_messages_auth.pb.cc" />
+    <ClCompile Include="protobuf\generated\steamdatagram_messages_sdr.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_cloud.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_gamenetworkingui.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_helprequest.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_oauth.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_player.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_publishedfile.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_steamlearn.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steammessages_unified_base.steamworkssdk.pb.cc" />
+    <ClCompile Include="protobuf\generated\steamnetworkingsockets_messages.pb.cc" />
+    <ClCompile Include="protobuf\generated\steamnetworkingsockets_messages_certs.pb.cc" />
+    <ClCompile Include="protobuf\generated\steamnetworkingsockets_messages_udp.pb.cc" />
+    <ClCompile Include="protobuf\generated\te.pb.cc" />
+    <ClCompile Include="protobuf\generated\uifontfile_format.pb.cc" />
+    <ClCompile Include="protobuf\generated\usercmd.pb.cc" />
+    <ClCompile Include="protobuf\generated\usermessages.pb.cc" />
+    <ClCompile Include="protobuf\generated\valveextensions.pb.cc" />
+    <ClCompile Include="src\desubtick.cpp" />
+    <ClCompile Include="src\utils\plat_linux.cpp" />
+    <ClCompile Include="src\utils\plat_win.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="protobuf\generated\base_gcmessages_csgo.pb.h" />
+    <ClInclude Include="protobuf\generated\clientmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\connectionless_netmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\cstrike15_gcmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\cstrike15_usermessages.pb.h" />
+    <ClInclude Include="protobuf\generated\cs_gameevents.pb.h" />
+    <ClInclude Include="protobuf\generated\cs_usercmd.pb.h" />
+    <ClInclude Include="protobuf\generated\c_peer2peer_netmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\demo.pb.h" />
+    <ClInclude Include="protobuf\generated\econ_gcmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\engine_gcmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\fatdemo.pb.h" />
+    <ClInclude Include="protobuf\generated\gameevents.pb.h" />
+    <ClInclude Include="protobuf\generated\gcsdk_gcmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\gcsystemmsgs.pb.h" />
+    <ClInclude Include="protobuf\generated\netmessages.pb.h" />
+    <ClInclude Include="protobuf\generated\networkbasetypes.pb.h" />
+    <ClInclude Include="protobuf\generated\networksystem_protomessages.pb.h" />
+    <ClInclude Include="protobuf\generated\network_connection.pb.h" />
+    <ClInclude Include="protobuf\generated\steamdatagram_messages_auth.pb.h" />
+    <ClInclude Include="protobuf\generated\steamdatagram_messages_sdr.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_cloud.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_gamenetworkingui.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_helprequest.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_oauth.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_player.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_publishedfile.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_steamlearn.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steammessages_unified_base.steamworkssdk.pb.h" />
+    <ClInclude Include="protobuf\generated\steamnetworkingsockets_messages.pb.h" />
+    <ClInclude Include="protobuf\generated\steamnetworkingsockets_messages_certs.pb.h" />
+    <ClInclude Include="protobuf\generated\steamnetworkingsockets_messages_udp.pb.h" />
+    <ClInclude Include="protobuf\generated\te.pb.h" />
+    <ClInclude Include="protobuf\generated\uifontfile_format.pb.h" />
+    <ClInclude Include="protobuf\generated\usercmd.pb.h" />
+    <ClInclude Include="protobuf\generated\usermessages.pb.h" />
+    <ClInclude Include="protobuf\generated\valveextensions.pb.h" />
+    <ClInclude Include="src\common.h" />
+    <ClInclude Include="src\desubtick.h" />
+    <ClInclude Include="src\utils\addresses.h" />
+    <ClInclude Include="src\utils\cdetour.h" />
+    <ClInclude Include="src\utils\module.h" />
+    <ClInclude Include="src\utils\plat.h" />
+    <ClInclude Include="src\utils\plat_win.h" />
+    <ClInclude Include="src\utils\virtual.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="protobuf\base_gcmessages.proto" />
+    <Content Include="protobuf\base_gcmessages_csgo.proto" />
+    <Content Include="protobuf\clientmessages.proto" />
+    <Content Include="protobuf\connectionless_netmessages.proto" />
+    <Content Include="protobuf\cstrike15_gcmessages.proto" />
+    <Content Include="protobuf\cstrike15_usermessages.proto" />
+    <Content Include="protobuf\cs_gameevents.proto" />
+    <Content Include="protobuf\cs_usercmd.proto" />
+    <Content Include="protobuf\c_peer2peer_netmessages.proto" />
+    <Content Include="protobuf\demo.proto" />
+    <Content Include="protobuf\econ_gcmessages.proto" />
+    <Content Include="protobuf\engine_gcmessages.proto" />
+    <Content Include="protobuf\enums_clientserver.proto" />
+    <Content Include="protobuf\fatdemo.proto" />
+    <Content Include="protobuf\gameevents.proto" />
+    <Content Include="protobuf\gcsdk_gcmessages.proto" />
+    <Content Include="protobuf\gcsystemmsgs.proto" />
+    <Content Include="protobuf\netmessages.proto" />
+    <Content Include="protobuf\networkbasetypes.proto" />
+    <Content Include="protobuf\networksystem_protomessages.proto" />
+    <Content Include="protobuf\network_connection.proto" />
+    <Content Include="protobuf\protocompile.sh" />
+    <Content Include="protobuf\protoc\google\protobuf\descriptor.proto" />
+    <Content Include="protobuf\protoc\protoc" />
+    <Content Include="protobuf\steamdatagram_messages_auth.proto" />
+    <Content Include="protobuf\steamdatagram_messages_sdr.proto" />
+    <Content Include="protobuf\steammessages.proto" />
+    <Content Include="protobuf\steammessages_base.proto" />
+    <Content Include="protobuf\steammessages_cloud.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_gamenetworkingui.proto" />
+    <Content Include="protobuf\steammessages_helprequest.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_oauth.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_player.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_publishedfile.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_steamlearn.steamworkssdk.proto" />
+    <Content Include="protobuf\steammessages_unified_base.steamworkssdk.proto" />
+    <Content Include="protobuf\steamnetworkingsockets_messages.proto" />
+    <Content Include="protobuf\steamnetworkingsockets_messages_certs.proto" />
+    <Content Include="protobuf\steamnetworkingsockets_messages_udp.proto" />
+    <Content Include="protobuf\te.proto" />
+    <Content Include="protobuf\uifontfile_format.proto" />
+    <Content Include="protobuf\usercmd.proto" />
+    <Content Include="protobuf\usermessages.proto" />
+    <Content Include="protobuf\valveextensions.proto" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
