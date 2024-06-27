@@ -64,6 +64,30 @@ typedef struct funchook funchook_t;
 #define FUNCHOOK_ERROR_MEMORY_FUNCTION         9 /* other memory function errors */
 #define FUNCHOOK_ERROR_NOT_INSTALLED          10
 #define FUNCHOOK_ERROR_NO_AVAILABLE_REGISTERS 11
+#define FUNCHOOK_ERROR_NO_SPACE_NEAR_TARGET_ADDR 12
+
+#define FUNCHOOK_FLAG_THISCALL     (1u << 0)
+#define FUNCHOOK_FLAG_FASTCALL     (1u << 1)
+
+typedef struct funchook_arg_handle funchook_arg_handle_t;
+
+typedef struct funchook_info {
+    void *original_target_func;
+    void *target_func;
+    void *trampoline_func;
+    void *hook_func;
+    void *user_data;
+    funchook_arg_handle_t *arg_handle;
+} funchook_info_t;
+
+typedef void (*funchook_hook_t)(funchook_info_t *fi);
+
+typedef struct {
+    void *hook_func;
+    funchook_hook_t prehook;
+    void *user_data;
+    unsigned int flags;
+} funchook_params_t;
 
 /**
  * Create a funchook handle
@@ -81,6 +105,9 @@ FUNCHOOK_EXPORT funchook_t *funchook_create(void);
  * @return             error code. one of FUNCHOOK_ERROR_*.
  */
 FUNCHOOK_EXPORT int funchook_prepare(funchook_t *funchook, void **target_func, void *hook_func);
+
+FUNCHOOK_EXPORT int funchook_prepare_with_params(funchook_t *funchook,
+    void **target_func, const funchook_params_t *params);
 
 /**
  * Install hooks prepared by funchook_prepare().
@@ -123,6 +150,15 @@ FUNCHOOK_EXPORT const char *funchook_error_message(const funchook_t *funchook);
  * @return             error code. one of FUNCHOOK_ERROR_*.
  */
 FUNCHOOK_EXPORT int funchook_set_debug_file(const char *name);
+
+/* This function is under developemnt. It will be used by C++ template functions later. */
+FUNCHOOK_EXPORT void *funchook_arg_get_int_reg_addr(const funchook_arg_handle_t *arg_handle, int pos);
+
+/* This function is under developemnt. It will be used by C++ template functions later. */
+FUNCHOOK_EXPORT void *funchook_arg_get_flt_reg_addr(const funchook_arg_handle_t *arg_handle, int pos);
+
+/* This function is under developemnt. It will be used by C++ template functions later. */
+FUNCHOOK_EXPORT void *funchook_arg_get_stack_addr(const funchook_arg_handle_t *arg_handle, int pos);
 
 #ifdef __cplusplus
 } // extern "C"

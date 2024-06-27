@@ -82,13 +82,3 @@ public:
 	void* windowsMoment;
 #endif
 };
-
-extern DesubtickPlugin g_DesubtickPlugin;
-
-internal void Hook_ClientCommand(CPlayerSlot slot, const CCommand& args);
-internal void Hook_GameFrame(bool simulating, bool bFirstTick, bool bLastTick);
-internal float Hook_ProcessUsercmds_Pre(CPlayerSlot slot, bf_read *buf, int numcmds, bool ignore, bool paused);
-internal float Hook_ProcessUsercmds_Post(CPlayerSlot slot, bf_read *buf, int numcmds, bool ignore, bool paused);
-internal void Hook_CEntitySystem_Spawn_Post(int nCount, const EntitySpawnInfo_t* pInfo);
-internal void Hook_CheckTransmit(CCheckTransmitInfo **pInfo, int, CBitVec<16384> &, const Entity2Networkable_t **pNetworkables, const uint16 *pEntityIndicies, int nEntities);
-internal void Hook_ClientPutInServer(CPlayerSlot slot, char const *pszName, int type, uint64 xuid);

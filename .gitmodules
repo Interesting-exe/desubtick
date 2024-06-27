@@ -4,3 +4,6 @@
 [submodule "hl2sdk-cs2"]
 	path = hl2sdk-cs2
 	url = https://github.com/alliedmodders/hl2sdk
+[submodule "hl2sdk-manifests"]
+	path = hl2sdk-manifests
+	url = https://github.com/alliedmodders/hl2sdk-manifests

@@ -19,13 +19,15 @@ if ambuild_version.startswith('2.1'):
   sys.exit(1)
 
 parser = run.BuildParser(sourcePath=sys.path[0], api='2.2')
-parser.options.add_argument('-n', '--plugin-name', type=str, dest='plugin_name', default='desubtick',
+parser.options.add_argument('-n', '--plugin-name', type=str, dest='plugin_name', default=None,
                        help='Plugin name')
-parser.options.add_argument('-a', '--plugin-alias', type=str, dest='plugin_alias', default='desubtick',
+parser.options.add_argument('-a', '--plugin-alias', type=str, dest='plugin_alias', default=None,
                        help='Plugin alias')
-parser.options.add_argument('--hl2sdk-root', type=str, dest='hl2sdk_root', default='../',
+parser.options.add_argument('--hl2sdk-root', type=str, dest='hl2sdk_root', default=None,
                        help='Root search folder for HL2SDKs')
-parser.options.add_argument('--mms_path', type=str, dest='mms_path', default='../metamod-source',
+parser.options.add_argument('--hl2sdk-manifests', type=str, dest='hl2sdk_manifests', default='hl2sdk-manifests/',
+                       help='HL2SDK manifests source tree folder')
+parser.options.add_argument('--mms_path', type=str, dest='mms_path', default=None,
                        help='Metamod:Source source tree folder')
 parser.options.add_argument('--enable-debug', action='store_const', const='1', dest='debug',
                        help='Enable debugging symbols')
@@ -36,4 +38,9 @@ parser.options.add_argument('-s', '--sdks', default='all', dest='sdks',
                             'comma-delimited list of engine names (default: "all")')
 parser.options.add_argument('--targets', type=str, dest='targets', default=None,
                             help="Override the target architecture (use commas to separate multiple targets).")
+# AddressSanitizer Instructions:
+# Recompile Metamod with RTLD_DEEPBIND removed (may break some std functionality)
+# Run server with LD_PRELOAD=/usr/lib/clang/11/lib/linux/libclang_rt.asan-x86_64.so (for SteamRT3)
+parser.options.add_argument('--asan', action='store_const', const='1', dest='asan',
+                       help='Build for AddressSanitizer')
 parser.Configure()

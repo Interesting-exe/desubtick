@@ -22,13 +22,13 @@ namespace BasePlayer
 DECLARE_BASEPLAYER_EXTERN_DETOUR(ProcessUsercmds);
 DECLARE_BASEPLAYER_DETOUR(ProcessUsercmds);
 
-
-
 PLUGIN_EXPOSE(DesubtickPlugin, g_DesubtickPlugin);
 
 bool DesubtickPlugin::Load(PluginId id, ISmmAPI *ismm, char *error, size_t maxlen, bool late)
 {
 	PLUGIN_SAVEVARS();
+
+	GET_V_IFACE_CURRENT(GetEngineFactory, g_pCVar, ICvar, CVAR_INTERFACE_VERSION);
 	modules::server = new CModule(GAMEBIN, "server");
 	std::ifstream configFile("tickrate.txt");
 
